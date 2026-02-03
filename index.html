@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udeme Jalekun - Quality Assurance Engineer | Test Analyst</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+        }
+        
+        .profile-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.4em;
+            color: #ecf0f1;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: color 0.3s;
+        }
+        
+        .contact-item:hover {
+            color: #3498db;
+        }
+        
+        .section {
+            padding: 50px 40px;
+        }
+        
+        .section:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .section-title {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+            display: inline-block;
+        }
+        
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .profile-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .section:nth-child(even) .profile-card {
+            background: white;
+        }
+        
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        .profile-card h3 {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        
+        .profile-card p {
+            color: #555;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+        
+        .expertise-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        
+        .expertise-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .achievement-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .achievement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, #667eea, #764ba2);
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        .achievement-number {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .achievement-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .achievement-description {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .stat-label {
+            color: #555;
+            font-size: 0.95em;
+            margin-top: 8px;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 40px;
+        }
+        
+        .cta-title {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+        
+        .cta-subtitle {
+            font-size: 1.2em;
+            margin-bottom: 35px;
+            color: rgba(255,255,255,0.9);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            background: #f8f9fa;
+        }
+        
+        .cta-button.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .cta-button.secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+        
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .cert-badge {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .subtitle {
+                font-size: 1.1em;
+            }
+            
+            .section {
+                padding: 30px 20px;
+            }
+            
+            header {
+                padding: 40px 20px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-badge">🏆 ISTQB Certified | 6 Years Experience</div>
+            <h1>Udeme Jalekun</h1>
+            <p class="subtitle">Senior Quality Assurance Engineer | Test Analyst | Test Automation Specialist</p>
+            <div class="contact-info">
+                <a href="tel:+447823683804" class="contact-item">
+                    📞 +44 7823 683804
+                </a>
+                <a href="mailto:jalekunudeme@gmail.com" class="contact-item">
+                    ✉️ jalekunudeme@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/udeme-jalekun" target="_blank" class="contact-item">
+                    💼 LinkedIn Profile
+                </a>
+                <span class="contact-item">📍 United Kingdom</span>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2 class="section-title">Professional Profile</h2>
+            
+            <div class="profile-grid">
+                <div class="profile-card">
+                    <h3>Experience</h3>
+                    <p>6 Years</p>
+                </div>
+                <div class="profile-card">
+                    <h3>Systems Tested</h3>
+                    <p>40+ Microservices</p>
+                </div>
+                <div class="profile-card">
+                    <h3>Team Leadership</h3>
+                    <p>20+ Engineers Led</p>
+                </div>
+                <div class="profile-card">
+                    <h3>Financial Impact</h3>
+                    <p>£12M+ Protected</p>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 40px; margin-bottom: 20px; color: #2c3e50; font-size: 1.5em;">Core Expertise</h3>
+            <div class="expertise-list">
+                <span class="expertise-tag">Test Automation</span>
+                <span class="expertise-tag">Selenium & Cypress</span>
+                <span class="expertise-tag">API Testing</span>
+                <span class="expertise-tag">Security Testing</span>
+                <span class="expertise-tag">Performance Testing</span>
+                <span class="expertise-tag">CI/CD Integration</span>
+                <span class="expertise-tag">Agile & Scrum</span>
+                <span class="expertise-tag">Risk-Based Testing</span>
+                <span class="expertise-tag">Accessibility Testing</span>
+                <span class="expertise-tag">Mobile Testing (iOS/Android)</span>
+                <span class="expertise-tag">Database Testing</span>
+                <span class="expertise-tag">JavaScript & Python</span>
+                <span class="expertise-tag">Jenkins & GitHub Actions</span>
+                <span class="expertise-tag">OWASP ZAP & Burp Suite</span>
+                <span class="expertise-tag">JMeter & K6</span>
+                <span class="expertise-tag">Azure DevOps & Jira</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Key Achievements</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Security Compliance Achieved</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Critical Production Failures</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4x</div>
+                    <div class="stat-label">Faster Release Cycles</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">92.5%</div>
+                    <div class="stat-label">On-Time Delivery Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">60%</div>
+                    <div class="stat-label">Regression Time Reduced</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1,200+</div>
+                    <div class="stat-label">Test Scenarios Created</div>
+                </div>
+            </div>
+
+            <div class="achievements-grid" style="margin-top: 40px;">
+                <div class="achievement-card">
+                    <div class="achievement-number">£1.05M+</div>
+                    <div class="achievement-title">Revenue Protection at Scale</div>
+                    <div class="achievement-description">
+                        Secured ₦1.35 billion (£1.05M) in revenue at Interswitch through comprehensive testing across 23 microservices, achieving 95% security compliance and zero critical production failures whilst processing millions of daily transactions for Africa's financial inclusion ecosystem.
+                    </div>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-number">87.5%</div>
+                    <div class="achievement-title">Product Development Acceleration</div>
+                    <div class="achievement-description">
+                        Enabled 87.5% year-over-year growth in new product development at Interswitch by architecting enterprise-scale test automation infrastructure integrated with CI/CD pipelines, incorporating Veracode security scanning for continuous vulnerability detection.
+                    </div>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-number">£11.7M</div>
+                    <div class="achievement-title">Quality Leadership for High-Volume Platform</div>
+                    <div class="achievement-description">
+                        Led quality transformation at Kippa processing ₦15 billion (£11.7M) in annual transactions. Built QA governance from scratch, improved development velocity by 20%, reduced defect rates by 15%, and led 16+ engineers to deliver industry-leading quality standards.
+                    </div>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-number">Weekly</div>
+                    <div class="achievement-title">Agile Transformation Success</div>
+                    <div class="achievement-description">
+                        Accelerated release cycles from monthly to weekly (4x improvement) at Kippa by implementing feature-based testing strategies, enabling faster time-to-market whilst maintaining zero critical production defects and improving testing efficiency by 5%.
+                    </div>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-number">300M+</div>
+                    <div class="achievement-title">Market Expansion Enablement</div>
+                    <div class="achievement-description">
+                        Enabled market expansion to 300M+ Francophone users at Raenest by spearheading quality validation for French language localisation across mobile platforms. Validated 7 major features including cryptocurrency integration, US stocks trading, and cross-border payments.
+                    </div>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-number">60%</div>
+                    <div class="achievement-title">Test Automation Excellence</div>
+                    <div class="achievement-description">
+                        Designed robust Cypress automation architecture using JavaScript and Page Object Model at Tiersphere, reducing regression testing time by 60% whilst creating maintainable, reusable test frameworks integrated into CI/CD pipelines for continuous quality assurance.
+                    </div>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-number">100%</div>
+                    <div class="achievement-title">Critical System Reliability</div>
+                    <div class="achievement-description">
+                        Ensured 100% service availability during critical brand migration at Raenest from Geegpay platform, testing cryptocurrency features (USDC/USDT), stock trading functionality, and sub-1-hour international payment processing whilst maintaining zero data loss.
+                    </div>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-number">40%</div>
+                    <div class="achievement-title">Process Efficiency Improvement</div>
+                    <div class="achievement-description">
+                        Reduced manual processing overhead by 40% at Interswitch through comprehensive testing of POS Request Module, enabling aggregators and Financial Institution Partners to digitally manage terminal requests, accelerating point-of-sale infrastructure rollout across Nigeria.
+                    </div>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-number">20%</div>
+                    <div class="achievement-title">Test Coverage Enhancement</div>
+                    <div class="achievement-description">
+                        Increased test coverage by 20% and reduced post-deployment defects by 15% at Raenest by authoring 1,200+ comprehensive test scenarios across Android and iOS applications, covering happy paths, edge cases, and negative scenarios for business-critical features.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Professional Certifications</h2>
+            <div class="certifications">
+                <div class="cert-badge">✓ ISTQB Foundation Level (CTFL)</div>
+                <div class="cert-badge">✓ API Security for PCI Compliance</div>
+                <div class="cert-badge">✓ API Penetration Tester</div>
+                <div class="cert-badge">✓ Six Sigma Yellow Belt Professional</div>
+                <div class="cert-badge">✓ Scrum Fundamentals Certification (SFC)</div>
+                <div class="cert-badge">✓ ITIL Foundation V3</div>
+            </div>
+
+            <h3 style="margin-top: 40px; margin-bottom: 20px; color: #2c3e50; font-size: 1.5em;">Education</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div class="achievement-card">
+                    <div class="achievement-title">Master of Research in Management</div>
+                    <div class="achievement-description">
+                        University of Lancashire | September 2025 – September 2026
+                    </div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-title">Postgraduate Diploma in Information Technology</div>
+                    <div class="achievement-description">
+                        National Open University of Nigeria | August 2019 – November 2021
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Industry Leadership & Community Contribution</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-title">🎓 Director of Professional Training & Development</div>
+                    <div class="achievement-description">
+                        Association of Software Testers – Leading industry-wide training programmes to elevate testing standards and develop next-generation QA professionals across the software testing community.
+                    </div>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-title">👨‍🏫 SQA Programme Owner & Trainer</div>
+                    <div class="achievement-description">
+                        Garden Academy – Designing and delivering comprehensive Software Quality Assurance curricula, teaching modern testing practices including automation, API testing, and security validation to aspiring testers.
+                    </div>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-title">🤝 Professional Mentor</div>
+                    <div class="achievement-description">
+                        AdpList, Ladder Tech & UnbugQA Academy – Providing one-on-one mentorship to QA professionals globally, sharing expertise in test automation, career development, and industry best practices through structured guidance programmes.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2 class="cta-title">Ready to Deliver Quality Excellence to Your Team</h2>
+            <p class="cta-subtitle">
+                With 6 years of proven expertise protecting £12M+ in revenue, leading teams of 20+ engineers, and achieving 95% security compliance across complex fintech platforms, I bring immediate value to organisations seeking exceptional quality assurance leadership.
+            </p>
+            <p class="cta-subtitle">
+                I am available for immediate start and ready to drive quality transformation in your organisation through test automation excellence, security-first testing strategies, and Agile delivery acceleration.
+            </p>
+            <div class="cta-buttons">
+                <a href="mailto:jalekunudeme@gmail.com" class="cta-button">
+                    📧 Contact Me
+                </a>
+                <a href="https://www.linkedin.com/in/udeme-jalekun" target="_blank" class="cta-button secondary">
+                    💼 View LinkedIn Profile
+                </a>
+                <a href="tel:+447823683804" class="cta-button secondary">
+                    📞 Call Now
+                </a>
+            </div>
+            
+            <div style="margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.3);">
+                <h3 style="font-size: 1.5em; margin-bottom: 20px;">Why Hire Me?</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left; max-width: 900px; margin: 0 auto;">
+                    <div>
+                        <strong style="font-size: 1.1em;">✓ Proven Results</strong><br>
+                        Zero critical failures, 95% security compliance, £12M+ revenue protected
+                    </div>
+                    <div>
+                        <strong style="font-size: 1.1em;">✓ Technical Excellence</strong><br>
+                        Expert in Selenium, Cypress, JavaScript, Python, CI/CD automation
+                    </div>
+                    <div>
+                        <strong style="font-size: 1.1em;">✓ Leadership Experience</strong><br>
+                        Successfully led 20+ engineers across complex fintech platforms
+                    </div>
+                    <div>
+                        <strong style="font-size: 1.1em;">✓ UK-Based & Available</strong><br>
+                        Right to work in UK, immediate start, flexible working arrangements
+                    </div>
+                    <div>
+                        <strong style="font-size: 1.1em;">✓ Industry Certified</strong><br>
+                        ISTQB, API Security, Scrum, ITIL, Six Sigma qualifications
+                    </div>
+                    <div>
+                        <strong style="font-size: 1.1em;">✓ Continuous Learner</strong><br>
+                        Currently pursuing Master's degree, active community contributor
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
